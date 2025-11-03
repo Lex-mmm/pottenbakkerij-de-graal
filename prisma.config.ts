@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { defineConfig, env } from "prisma/config";
+import { defineConfig } from "prisma/config";
 
 export default defineConfig({
   schema: "prisma/schema.prisma",
@@ -8,6 +8,8 @@ export default defineConfig({
   },
   engine: "classic",
   datasource: {
-    url: env("DATABASE_URL"),
+    // Provide fallback for build environments where DATABASE_URL isn't set yet
+    // Prisma generate doesn't actually connect, so this is safe
+    url: process.env.DATABASE_URL || "file:./dev.db",
   },
 });
