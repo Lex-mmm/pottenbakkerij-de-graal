@@ -1,0 +1,30 @@
+[
+  {
+    "id": "cat-mokken",
+    "slug": "mokken",
+    "title": "Mokken",
+    "description": "Handgedraaide mokken voor koffie, thee en warme chocolademelk. Elk stuk is uniek.",
+    "sort": 1
+  },
+  {
+    "id": "cat-schalen",
+    "slug": "schalen",
+    "title": "Schalen & Kommen",
+    "description": "Prachtige schalen voor ontbijt, soep of als decoratief element.",
+    "sort": 2
+  },
+  {
+    "id": "cat-vazen",
+    "slug": "vazen",
+    "title": "Vazen",
+    "description": "Elegante vazen voor verse of gedroogde bloemen. Met de hand gevormd.",
+    "sort": 3
+  },
+  {
+    "id": "cat-borden",
+    "slug": "borden",
+    "title": "Borden",
+    "description": "Handgemaakte borden voor dagelijks gebruik of speciale gelegenheden.",
+    "sort": 4
+  }
+]

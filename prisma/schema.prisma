@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  title       String
+  description String?
+  sort        Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  products    Product[]
+}
+
+model Product {
+  id            String    @id @default(cuid())
+  slug          String    @unique
+  title         String
+  description   String
+  priceCents    Int
+  images        String // JSON array of {src, alt}
+  categoryId    String
+  category      Category  @relation(fields: [categoryId], references: [id])
+  glaze         String?
+  size          String?
+  weightGrams   Int?
+  stock         Int       @default(0)
+  isActive      Boolean   @default(true)
+  featured      Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  orderItems    OrderItem[]
+}
+
+model Order {
+  id                String      @id @default(cuid())
+  stripeSessionId   String?     @unique
+  email             String
+  totalCents        Int
+  currency          String      @default("EUR")
+  shippingMethod    String
+  shippingName      String?
+  shippingStreet    String?
+  shippingPostal    String?
+  shippingCity      String?
+  shippingCountry   String?
+  status            String      @default("pending") // pending, paid, shipped, picked-up, refunded
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+  items             OrderItem[]
+}
+
+model OrderItem {
+  id            String  @id @default(cuid())
+  orderId       String
+  order         Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId     String
+  product       Product @relation(fields: [productId], references: [id])
+  title         String
+  unitPriceCents Int
+  quantity      Int
+  subtotalCents Int
+}

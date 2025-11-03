@@ -1,0 +1,233 @@
+[
+  {
+    "id": "p-mok-espresso",
+    "slug": "graal-espresso-mok",
+    "title": "Graal Espresso Mok",
+    "description": "Handgedraaide espresso mok met warme teracotta glazuur. Perfect voor een sterke espresso of ristretto. De dikke wanden houden je koffie langer warm. Elke mok is uniek door het handwerk en de natuurlijke variaties in het glazuur.\n\n**Kenmerken:**\n- Met de hand gedraaid\n- Lokale klei\n- Vaatwasserbestendig (handwas aanbevolen)\n- Elke mok is uniek",
+    "priceCents": 1850,
+    "images": [
+      {
+        "src": "/images/products/mok-espresso-1.jpg",
+        "alt": "Handgemaakte teracotta espresso mok van Pottenbakkerij de Graal"
+      }
+    ],
+    "categoryId": "cat-mokken",
+    "glaze": "Teracotta",
+    "size": "60 ml, ø 6 cm, hoogte 6 cm",
+    "weightGrams": 180,
+    "stock": 8,
+    "isActive": true,
+    "featured": true,
+    "createdAt": "2025-11-01T09:00:00.000Z"
+  },
+  {
+    "id": "p-mok-cappuccino",
+    "slug": "graal-cappuccino-mok",
+    "title": "Graal Cappuccino Mok",
+    "description": "Royale cappuccinomok met crèmekleurig mat glazuur. Het perfecte formaat voor een cappuccino met melkschuim. De brede rand zorgt voor optimaal genot. Handgemaakt van lokale klei.\n\n**Kenmerken:**\n- Ideaal voor cappuccino of café latte\n- Mat crème glazuur\n- Comfortabele handgreep\n- Lokaal geproduceerd",
+    "priceCents": 2450,
+    "images": [
+      {
+        "src": "/images/products/mok-cappuccino-1.jpg",
+        "alt": "Handgemaakte crème cappuccino mok"
+      }
+    ],
+    "categoryId": "cat-mokken",
+    "glaze": "Crème mat",
+    "size": "180 ml, ø 8 cm, hoogte 7 cm",
+    "weightGrams": 280,
+    "stock": 12,
+    "isActive": true,
+    "featured": true,
+    "createdAt": "2025-11-01T09:30:00.000Z"
+  },
+  {
+    "id": "p-mok-thee",
+    "slug": "graal-thee-mok",
+    "title": "Graal Thee Mok",
+    "description": "Grote theemok met diepblauw gespikkeld glazuur. Voor de echte theeliefhebber. De dikke wanden zorgen ervoor dat je thee lang warm blijft. Het organische gevoel van het handwerk maakt elke thee-pauze speciaal.\n\n**Kenmerken:**\n- Royale inhoud voor uitgebreide thee-momentjes\n- Uniek gespikkeld blauw glazuur\n- Stevig en duurzaam\n- Handgedraaid",
+    "priceCents": 2650,
+    "images": [
+      {
+        "src": "/images/products/mok-thee-1.jpg",
+        "alt": "Handgemaakte blauwe thee mok met gespikkeld glazuur"
+      }
+    ],
+    "categoryId": "cat-mokken",
+    "glaze": "Blauw gespikkeld",
+    "size": "300 ml, ø 9 cm, hoogte 9 cm",
+    "weightGrams": 350,
+    "stock": 6,
+    "isActive": true,
+    "featured": false,
+    "createdAt": "2025-10-28T10:00:00.000Z"
+  },
+  {
+    "id": "p-schaal-ontbijt",
+    "slug": "graal-ontbijtschaal",
+    "title": "Graal Ontbijtschaal",
+    "description": "Diepe ontbijtschaal met warm honingkleurig glazuur. Perfect voor yoghurt met granola, havermout of een stevig ontbijt. De schaal ligt comfortabel in de hand en heeft een prachtige organische vorm.\n\n**Kenmerken:**\n- Ideale grootte voor ontbijt\n- Warme honing glazuur\n- Handgevormd met unieke details\n- Lokale klei",
+    "priceCents": 3250,
+    "images": [
+      {
+        "src": "/images/products/schaal-ontbijt-1.jpg",
+        "alt": "Handgemaakte honingkleurige ontbijtschaal"
+      }
+    ],
+    "categoryId": "cat-schalen",
+    "glaze": "Honing",
+    "size": "450 ml, ø 14 cm, hoogte 7 cm",
+    "weightGrams": 420,
+    "stock": 10,
+    "isActive": true,
+    "featured": true,
+    "createdAt": "2025-10-30T11:00:00.000Z"
+  },
+  {
+    "id": "p-schaal-soep",
+    "slug": "graal-soepkom",
+    "title": "Graal Soepkom",
+    "description": "Royale soepkom met diep bosgroen glazuur. De perfecte kom voor een dampende soep, stoofpot of noedelgerecht. Het handgemaakte karakter geeft elke maaltijd een ambachtelijke uitstraling.\n\n**Kenmerken:**\n- Extra diep voor soep en stamppot\n- Rijk bosgroen glazuur\n- Comfortabel in de hand\n- Magnetronbestendig",
+    "priceCents": 3650,
+    "images": [
+      {
+        "src": "/images/products/schaal-soep-1.jpg",
+        "alt": "Handgemaakte groene soepkom van lokale klei"
+      }
+    ],
+    "categoryId": "cat-schalen",
+    "glaze": "Bosgroen",
+    "size": "550 ml, ø 15 cm, hoogte 8 cm",
+    "weightGrams": 520,
+    "stock": 7,
+    "isActive": true,
+    "featured": false,
+    "createdAt": "2025-10-29T14:00:00.000Z"
+  },
+  {
+    "id": "p-schaal-decoratief",
+    "slug": "graal-decoratieve-schaal",
+    "title": "Graal Decoratieve Schaal",
+    "description": "Grote decoratieve schaal met bijzonder gebroken wit glazuur en teracotta accenten. Perfect als fruitschaal, voor decoratie of als statement piece. De organische vorm en rijke textuur maken dit een kunstwerk op zich.\n\n**Kenmerken:**\n- Groot formaat (ø 28 cm)\n- Unieke twee-tonen glazuur\n- Ook geschikt als serveerplaat\n- Elk stuk is uniek",
+    "priceCents": 6500,
+    "images": [
+      {
+        "src": "/images/products/schaal-decoratief-1.jpg",
+        "alt": "Grote decoratieve schaal met wit en teracotta glazuur"
+      }
+    ],
+    "categoryId": "cat-schalen",
+    "glaze": "Gebroken wit met teracotta",
+    "size": "ø 28 cm, hoogte 6 cm",
+    "weightGrams": 1200,
+    "stock": 3,
+    "isActive": true,
+    "featured": true,
+    "createdAt": "2025-10-25T09:00:00.000Z"
+  },
+  {
+    "id": "p-vaas-smal",
+    "slug": "graal-slanke-vaas",
+    "title": "Graal Slanke Vaas",
+    "description": "Elegante slanke vaas met zachtblauw mat glazuur. Perfect voor een enkele tak of een paar droogbloemen. De minimalistische vorm past in elk interieur. Handgedraaid met oog voor detail.\n\n**Kenmerken:**\n- Slanke, elegante vorm\n- Zachtblauw mat glazuur\n- Perfect voor enkele bloemen\n- Hoogte 22 cm",
+    "priceCents": 4250,
+    "images": [
+      {
+        "src": "/images/products/vaas-smal-1.jpg",
+        "alt": "Slanke handgemaakte vaas met blauw glazuur"
+      }
+    ],
+    "categoryId": "cat-vazen",
+    "glaze": "Zachtblauw mat",
+    "size": "ø 7 cm, hoogte 22 cm",
+    "weightGrams": 450,
+    "stock": 5,
+    "isActive": true,
+    "featured": false,
+    "createdAt": "2025-10-27T13:00:00.000Z"
+  },
+  {
+    "id": "p-vaas-buikig",
+    "slug": "graal-buikige-vaas",
+    "title": "Graal Buikige Vaas",
+    "description": "Karakteristieke buikige vaas met warme caramelkleurig glazuur. De brede opening is ideaal voor een uitbundig boeket. De organische vorm en rijke kleur maken dit een opvallend decoratief element.\n\n**Kenmerken:**\n- Brede opening voor grote boeketten\n- Warm caramel glazuur\n- Stabiel en stevig\n- Handgevormd met unieke rondingen",
+    "priceCents": 5500,
+    "images": [
+      {
+        "src": "/images/products/vaas-buikig-1.jpg",
+        "alt": "Buikige handgemaakte vaas met caramel glazuur"
+      }
+    ],
+    "categoryId": "cat-vazen",
+    "glaze": "Caramel",
+    "size": "ø 15 cm (opening), hoogte 18 cm",
+    "weightGrams": 780,
+    "stock": 4,
+    "isActive": true,
+    "featured": true,
+    "createdAt": "2025-10-26T10:30:00.000Z"
+  },
+  {
+    "id": "p-bord-dinner",
+    "slug": "graal-dinerbord",
+    "title": "Graal Dinerbord",
+    "description": "Klassiek dinerbord met natuurlijke off-white glazuur en subtiele teracotta rand. Perfect voor je dagelijkse maaltijden of om je tafel feestelijk te dekken. De ambachtelijke afwerking maakt elk bord uniek.\n\n**Kenmerken:**\n- Standaard dinerbord formaat\n- Natuurlijke kleuren\n- Stapelbaar\n- Vaatwasser- en magnetronbestendig",
+    "priceCents": 3850,
+    "images": [
+      {
+        "src": "/images/products/bord-dinner-1.jpg",
+        "alt": "Handgemaakt dinerbord met off-white glazuur"
+      }
+    ],
+    "categoryId": "cat-borden",
+    "glaze": "Off-white met teracotta rand",
+    "size": "ø 26 cm",
+    "weightGrams": 650,
+    "stock": 15,
+    "isActive": true,
+    "featured": false,
+    "createdAt": "2025-10-24T11:00:00.000Z"
+  },
+  {
+    "id": "p-bord-dessert",
+    "slug": "graal-dessertbord",
+    "title": "Graal Dessertbord",
+    "description": "Charmant dessertbordje met gespikkeld mintgroen glazuur. Ideaal voor dessert, gebak of als bijgerecht. De speelse kleur en handgemaakte vorm brengen karakter naar je tafel.\n\n**Kenmerken:**\n- Klein formaat voor desserts\n- Uniek gespikkeld glazuur\n- Lichte kleur die food goed laat uitkomen\n- Handgedraaid",
+    "priceCents": 2450,
+    "images": [
+      {
+        "src": "/images/products/bord-dessert-1.jpg",
+        "alt": "Klein handgemaakt dessertbord met mintgroen glazuur"
+      }
+    ],
+    "categoryId": "cat-borden",
+    "glaze": "Mintgroen gespikkeld",
+    "size": "ø 18 cm",
+    "weightGrams": 320,
+    "stock": 18,
+    "isActive": true,
+    "featured": false,
+    "createdAt": "2025-10-23T09:30:00.000Z"
+  },
+  {
+    "id": "p-bord-serveer",
+    "slug": "graal-serveerplat",
+    "title": "Graal Serveerplat",
+    "description": "Groot serveerplat met karaktervol donkergrijs glazuur en natuurlijke rand. Perfect voor het presenteren van hapjes, kaas, of als middelpunt op de eettafel. De rustieke uitstraling combineert prachtig met modern of landelijk interieur.\n\n**Kenmerken:**\n- Extra groot formaat\n- Mat donkergrijs glazuur\n- Natuurlijke organische rand\n- Statement piece voor je tafel",
+    "priceCents": 7500,
+    "images": [
+      {
+        "src": "/images/products/bord-serveer-1.jpg",
+        "alt": "Groot handgemaakt serveerplat met donkergrijs glazuur"
+      }
+    ],
+    "categoryId": "cat-borden",
+    "glaze": "Donkergrijs mat",
+    "size": "ø 35 cm",
+    "weightGrams": 1450,
+    "stock": 2,
+    "isActive": true,
+    "featured": true,
+    "createdAt": "2025-10-22T14:00:00.000Z"
+  }
+]
