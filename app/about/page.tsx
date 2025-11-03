@@ -2,6 +2,9 @@ import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 import { listPublicImages, pickHeroImage } from "@/lib/images";
 
+// Force dynamic rendering to allow filesystem operations at runtime
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Over Ons",
   description:

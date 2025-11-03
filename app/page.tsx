@@ -8,6 +8,9 @@ import { prisma } from "@/lib/prisma";
 import { pickHeroImage, listPublicImages, ensurePublicImage } from "@/lib/images";
 import type { Product } from "@/lib/schemas";
 
+// Force dynamic rendering to allow filesystem operations at runtime
+export const dynamic = "force-dynamic";
+
 async function getFeaturedProducts(): Promise<Product[]> {
   const products = await prisma.product.findMany({
     where: {
