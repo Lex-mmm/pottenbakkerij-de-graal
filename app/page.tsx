@@ -2,10 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ProductGrid } from "@/components/product-grid";
+import { ProductShowcase } from "@/components/product-showcase";
+import { MasonryGallery } from "@/components/masonry-gallery";
 import { ImageStrip } from "@/components/image-strip";
 import { prisma } from "@/lib/prisma";
-import { pickHeroImage, listPublicImages, ensurePublicImage } from "@/lib/images";
+import { pickHeroImage, listPublicImages } from "@/lib/images";
 import type { Product } from "@/lib/schemas";
 
 // Force dynamic rendering to allow filesystem operations at runtime
@@ -20,10 +21,10 @@ async function getFeaturedProducts(): Promise<Product[]> {
     orderBy: {
       createdAt: "desc",
     },
-    take: 4,
+    take: 6, // Show 6 featured products
   });
 
-  const serialized = products.map((p) => ({
+  return products.map((p) => ({
     ...p,
     images: JSON.parse(p.images) as { src: string; alt: string }[],
     glaze: p.glaze ?? undefined,
@@ -31,28 +32,35 @@ async function getFeaturedProducts(): Promise<Product[]> {
     weightGrams: p.weightGrams ?? undefined,
     createdAt: p.createdAt.toISOString(),
   }));
+}
 
-  // Ensure each image src points to an existing public file; otherwise use a placeholder
-  const withSafeImages = await Promise.all(
-    serialized.map(async (prod) => ({
-      ...prod,
-      images: await Promise.all(
-        prod.images.map(async (img) => ({
-          ...img,
-          src: await ensurePublicImage(img.src, "/images/placeholder-product.svg"),
-        }))
-      ),
-    }))
-  );
+async function getAllProductImages() {
+  const products = await prisma.product.findMany({
+    where: { isActive: true },
+    select: {
+      slug: true,
+      title: true,
+      images: true,
+    },
+    take: 12, // Limit for gallery
+  });
 
-  return withSafeImages;
+  return products.flatMap((p) => {
+    const imgs = JSON.parse(p.images) as { src: string; alt: string }[];
+    return imgs.map((img) => ({
+      src: img.src,
+      alt: img.alt,
+      product: { title: p.title, slug: p.slug },
+    }));
+  });
 }
 
 export default async function Home() {
-  const [featuredProducts, heroAtelier, productionImages] = await Promise.all([
+  const [featuredProducts, heroAtelier, productionImages, productGalleryImages] = await Promise.all([
     getFeaturedProducts(),
     pickHeroImage("atelier"),
     listPublicImages("production"),
+    getAllProductImages(),
   ]);
 
   return (
@@ -141,13 +149,29 @@ export default async function Home() {
             </p>
           </div>
 
-          <ProductGrid products={featuredProducts} />
+          <ProductShowcase products={featuredProducts} />
 
           <div className="text-center mt-12">
             <Button asChild size="lg" variant="outline">
               <Link href="/shop">Bekijk Alle Producten</Link>
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* Masonry Product Gallery */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-background to-sand/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl font-bold text-charcoal sm:text-4xl mb-4">
+              Onze Collectie
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Elk stuk vertelt een verhaal van ambacht, geduld en vakmanschap.
+            </p>
+          </div>
+
+          <MasonryGallery images={productGalleryImages} columns={3} />
         </div>
       </section>
 
