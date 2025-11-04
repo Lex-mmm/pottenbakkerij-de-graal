@@ -30,10 +30,10 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/shop"
+                  href="/atelier"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Winkel
+                  Atelier
                 </Link>
               </li>
               <li>
@@ -41,7 +41,7 @@ export function Footer() {
                   href="/about"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Over Ons
+                  Over Max
                 </Link>
               </li>
               <li>

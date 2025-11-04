@@ -6,16 +6,15 @@ import { listPublicImages, pickHeroImage } from "@/lib/images";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Over Ons",
+  title: "Over Max",
   description:
-    "Maak kennis met Pottenbakkerij de Graal: ons atelier, het ambacht en de mensen erachter.",
+    "Maak kennis met Max, de selfmade pottenbakker achter Pottenbakkerij de Graal sinds 1984.",
 };
 
 export default async function AboutPage() {
-  const [hero, atelierImages, productionImages] = await Promise.all([
-    pickHeroImage("atelier"),
-    listPublicImages("atelier"),
-    listPublicImages("production"),
+  const [hero, maxImages] = await Promise.all([
+    pickHeroImage("Max"),
+    listPublicImages("Max"),
   ]);
 
   return (
@@ -24,25 +23,27 @@ export default async function AboutPage() {
       <div className="grid gap-8 md:grid-cols-2 md:items-center mb-12">
         <div>
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-4">
-            Over Pottenbakkerij de Graal
+            Over Max - De Pottenbakker
           </h1>
-          <p className="text-muted-foreground leading-relaxed">
-            {siteConfig.about.long}
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Max is de drijvende kracht achter Pottenbakkerij de Graal, die al sinds 1984 bestaat. 
+            Als selfmade pottenbakker behoort hij tot één van de weinigen in Nederland die nog 
+            handgedraaid aardewerk kan maken, ook het grotere werk.
           </p>
-
-          <div className="mt-6 text-sm text-muted-foreground">
-            <p className="font-medium">Atelier</p>
-            <p>
-              {siteConfig.address.street}, {siteConfig.address.postalCode}{" "}
-              {siteConfig.address.city}
-            </p>
-          </div>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Met meer dan 40 jaar ervaring combineert Max traditioneel ambacht met een moderne visie. 
+            Elk stuk dat zijn atelier verlaat, draagt zijn persoonlijke signatuur en jarenlange expertise.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Max is vader van 4 kinderen (3 dochters en een zoon) en trotse opa van 10 kleinzonen. 
+            Zijn passie voor het vak en toewijding aan kwaliteit geeft hij graag door aan de volgende generaties.
+          </p>
         </div>
         <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-secondary shadow-xl">
           {hero ? (
             <Image
               src={hero}
-              alt="Atelier – Pottenbakkerij de Graal"
+              alt="Max – Pottenbakkerij de Graal"
               fill
               className="object-cover"
               priority
@@ -54,57 +55,52 @@ export default async function AboutPage() {
 
       {/* Galleries */}
       <div className="space-y-12">
-        {/* Atelier */}
-        <section>
-          <h2 className="font-serif text-3xl font-semibold mb-6">Het Atelier</h2>
-          {atelierImages.length ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {atelierImages.map((src, i) => (
-                <div
-                  key={src}
-                  className="relative aspect-[4/3] overflow-hidden rounded-lg bg-secondary"
-                >
+        {/* Max Photos - Feature Gallery */}
+        {maxImages.length > 1 && (
+          <section className="relative">
+            <div className="absolute inset-0 bg-gradient-to-b from-sand/30 to-transparent -z-10 rounded-3xl" />
+            <div className="py-12">
+              <h2 className="font-serif text-3xl font-semibold mb-8 text-center">
+                Max aan het werk
+              </h2>
+              
+              {/* Featured large image */}
+              <div className="max-w-4xl mx-auto mb-8">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-2xl bg-secondary transform hover:scale-[1.02] transition-transform duration-500">
                   <Image
-                    src={src}
-                    alt={`Atelier foto ${i + 1}`}
+                    src={maxImages[1]}
+                    alt="Max de pottenbakker"
                     fill
                     className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 33vw"
+                    sizes="(max-width: 1024px) 100vw, 80vw"
                   />
                 </div>
-              ))}
-            </div>
-          ) : (
-            <p className="text-muted-foreground">Voeg beelden toe in /images/atelier</p>
-          )}
-        </section>
+              </div>
 
-        {/* Productieproces */}
-        <section>
-          <h2 className="font-serif text-3xl font-semibold mb-6">Het Proces</h2>
-          {productionImages.length ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {productionImages.map((src, i) => (
-                <div
-                  key={src}
-                  className="relative aspect-square overflow-hidden rounded-lg bg-secondary"
-                >
-                  <Image
-                    src={src}
-                    alt={`Productieproces ${i + 1}`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 33vw, 25vw"
-                  />
+              {/* Smaller images in a more dynamic layout */}
+              {maxImages.length > 2 && (
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
+                  {maxImages.slice(2).map((src, i) => (
+                    <div
+                      key={src}
+                      className={`relative overflow-hidden rounded-xl bg-secondary shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 ${
+                        i === 0 ? 'md:col-span-2 aspect-[16/9]' : 'aspect-[3/4]'
+                      }`}
+                    >
+                      <Image
+                        src={src}
+                        alt={`Max de pottenbakker ${i + 3}`}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 50vw, 33vw"
+                      />
+                    </div>
+                  ))}
                 </div>
-              ))}
+              )}
             </div>
-          ) : (
-            <p className="text-muted-foreground">
-              Voeg beelden toe in /images/production
-            </p>
-          )}
-        </section>
+          </section>
+        )}
       </div>
     </div>
   );

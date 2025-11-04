@@ -22,7 +22,7 @@ export const siteConfig = {
   address: {
     street: "Wolfstraat 5",
     postalCode: "6531 LK",
-    city: "Utrecht",
+    city: "Nijmegen",
     country: "Nederland",
     
 

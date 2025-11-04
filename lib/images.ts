@@ -18,7 +18,7 @@ async function listDirSafe(dir: string): Promise<string[]> {
  * Lists images inside public/images/<subdir> and returns web paths
  * e.g. listPublicImages("atelier") => ["/images/atelier/a.jpg", "/images/atelier/b.png"]
  */
-export async function listPublicImages(subdir: "atelier" | "production"): Promise<ImagePath[]> {
+export async function listPublicImages(subdir: "atelier" | "production" | "Max"): Promise<ImagePath[]> {
   const dir = path.join(process.cwd(), "public", "images", subdir);
   const files = await listDirSafe(dir);
   const filtered = files
@@ -31,7 +31,7 @@ export async function listPublicImages(subdir: "atelier" | "production"): Promis
 /**
  * Picks a single image from a folder (first by filename) as hero
  */
-export async function pickHeroImage(subdir: "atelier" | "production"): Promise<ImagePath | null> {
+export async function pickHeroImage(subdir: "atelier" | "production" | "Max"): Promise<ImagePath | null> {
   const imgs = await listPublicImages(subdir);
   return imgs[0] ?? null;
 }

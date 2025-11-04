@@ -9,8 +9,8 @@ import { useCart } from "@/lib/cart-context";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Winkel", href: "/shop" },
-  { name: "Over Ons", href: "/about" },
+  { name: "Atelier", href: "/atelier" },
+  { name: "Over Max", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
 
