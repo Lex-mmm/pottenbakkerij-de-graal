@@ -36,11 +36,10 @@ export const metadata: Metadata = {
   authors: [{ name: "Pottenbakkerij de Graal" }],
   icons: {
     icon: [
-      { url: "/images/Logo/logoheaddeGRaal.png", sizes: "any" },
-      { url: "/images/Logo/logoheaddeGRaal.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
     apple: [
-      { url: "/images/Logo/logoheaddeGRaal.png" },
+      { url: "/apple-touch-icon.png" },
     ],
   },
   openGraph: {
