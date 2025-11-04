@@ -3,7 +3,9 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ProductShowcase } from "@/components/product-showcase";
-import { MasonryGallery } from "@/components/masonry-gallery";
+import { StaticProductGallery } from "@/components/static-product-gallery";
+import { AtelierCarousel } from "@/components/atelier-carousel";
+import { listProductImages } from "@/lib/product-images";
 import { ImageStrip } from "@/components/image-strip";
 import { prisma } from "@/lib/prisma";
 import { pickHeroImage, listPublicImages } from "@/lib/images";
@@ -13,54 +15,38 @@ import type { Product } from "@/lib/schemas";
 export const dynamic = "force-dynamic";
 
 async function getFeaturedProducts(): Promise<Product[]> {
-  const products = await prisma.product.findMany({
-    where: {
-      featured: true,
-      isActive: true,
-    },
-    orderBy: {
-      createdAt: "desc",
-    },
-    take: 6, // Show 6 featured products
-  });
+  try {
+    const products = await prisma.product.findMany({
+      where: {
+        featured: true,
+        isActive: true,
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+      take: 6, // Show 6 featured products
+    });
 
-  return products.map((p) => ({
-    ...p,
-    images: JSON.parse(p.images) as { src: string; alt: string }[],
-    glaze: p.glaze ?? undefined,
-    size: p.size ?? undefined,
-    weightGrams: p.weightGrams ?? undefined,
-    createdAt: p.createdAt.toISOString(),
-  }));
-}
-
-async function getAllProductImages() {
-  const products = await prisma.product.findMany({
-    where: { isActive: true },
-    select: {
-      slug: true,
-      title: true,
-      images: true,
-    },
-    take: 12, // Limit for gallery
-  });
-
-  return products.flatMap((p) => {
-    const imgs = JSON.parse(p.images) as { src: string; alt: string }[];
-    return imgs.map((img) => ({
-      src: img.src,
-      alt: img.alt,
-      product: { title: p.title, slug: p.slug },
+    return products.map((p) => ({
+      ...p,
+      images: JSON.parse(p.images) as { src: string; alt: string }[],
+      glaze: p.glaze ?? undefined,
+      size: p.size ?? undefined,
+      weightGrams: p.weightGrams ?? undefined,
+      createdAt: p.createdAt.toISOString(),
     }));
-  });
+  } catch (error) {
+    console.log("Database not available, showing empty featured products");
+    return [];
+  }
 }
 
 export default async function Home() {
-  const [featuredProducts, heroAtelier, productionImages, productGalleryImages] = await Promise.all([
+  const [featuredProducts, atelierImages, productionImages, staticProductImages] = await Promise.all([
     getFeaturedProducts(),
-    pickHeroImage("atelier"),
+    listPublicImages("atelier"),
     listPublicImages("production"),
-    getAllProductImages(),
+    listProductImages(),
   ]);
 
   return (
@@ -114,15 +100,8 @@ export default async function Home() {
 
             {/* Hero Image */}
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-secondary shadow-2xl">
-              {heroAtelier ? (
-                <Image
-                  src={heroAtelier}
-                  alt="Atelier foto – Pottenbakkerij de Graal"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
+              {atelierImages.length > 0 ? (
+                <AtelierCarousel images={atelierImages} />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
                   <div className="text-center">
@@ -159,7 +138,8 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Masonry Product Gallery */}
+
+      {/* Static Product Gallery (always shows images from /public/images/products/) */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-background to-sand/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -171,7 +151,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <MasonryGallery images={productGalleryImages} columns={3} />
+          <StaticProductGallery images={staticProductImages} />
         </div>
       </section>
 
@@ -187,14 +167,13 @@ export default async function Home() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-6">
+          <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-5">
             {[
               { step: "1", title: "Klei voorbereiden" },
               { step: "2", title: "Draaien" },
               { step: "3", title: "Drogen" },
               { step: "4", title: "Biscuit bakken" },
               { step: "5", title: "Glazuren" },
-              { step: "6", title: "Glansbranden" },
             ].map((item) => (
               <div key={item.step} className="text-center">
                 <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl mx-auto mb-4">

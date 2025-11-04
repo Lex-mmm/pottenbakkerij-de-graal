@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -25,8 +26,15 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-serif font-bold text-primary">
-              Pottenbakkerij <span className="text-charcoal">de Graal</span>
+            <Link href="/" className="flex items-center space-x-2">
+              <Image
+                src="/images/Logo/LogoDeGraal_v2.png"
+                alt="Pottenbakkerij de Graal"
+                width={180}
+                height={50}
+                className="h-10 w-auto"
+                priority
+              />
             </Link>
           </div>
 

@@ -34,6 +34,15 @@ export const metadata: Metadata = {
     "vazen",
   ],
   authors: [{ name: "Pottenbakkerij de Graal" }],
+  icons: {
+    icon: [
+      { url: "/images/Logo/logoheaddeGRaal.png", sizes: "any" },
+      { url: "/images/Logo/logoheaddeGRaal.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/images/Logo/logoheaddeGRaal.png" },
+    ],
+  },
   openGraph: {
     title: "Pottenbakkerij de Graal | Handgemaakt Keramiek",
     description:
@@ -41,6 +50,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "nl_NL",
     siteName: "Pottenbakkerij de Graal",
+    images: [
+      {
+        url: "/images/Logo/LogoDeGraal_v2.png",
+        width: 1200,
+        height: 630,
+        alt: "Pottenbakkerij de Graal",
+      },
+    ],
   },
 };
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram, Mail, MapPin } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 
@@ -9,9 +10,15 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Brand */}
           <div className="col-span-1">
-            <h3 className="text-xl font-serif font-bold text-primary mb-4">
-              {siteConfig.name}
-            </h3>
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/images/Logo/LogoDeGraal_v2.png"
+                alt="Pottenbakkerij de Graal"
+                width={160}
+                height={45}
+                className="h-9 w-auto"
+              />
+            </Link>
             <p className="text-sm text-muted-foreground">
               {siteConfig.about.short}
             </p>

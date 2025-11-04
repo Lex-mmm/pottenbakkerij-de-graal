@@ -95,7 +95,7 @@ export const siteConfig = {
     short: "Handgemaakt keramiek met hart en ziel. Elke stuk is uniek en gemaakt van lokale klei in kleine oplages.",
     
     // Lange beschrijving voor de About pagina
-    long: `Welkom bij Pottenbakkerij de Graal! In ons atelier in Amsterdam maken we handgedraaid keramiek met liefde en aandacht voor detail.
+    long: `Welkom bij Pottenbakkerij de Graal! In ons atelier in Nijmegen maakt Max handgedraaid keramiek met liefde en aandacht voor detail.
     
 Elk stuk begint als een klomp lokale klei en wordt door onze handen gevormd op de draaischijf. Na het draaien volgt een proces van drogen, bijwerken, bakken en glazuren. Dit hele proces duurt gemiddeld 2-3 weken voordat een stuk klaar is.
 
@@ -116,7 +116,7 @@ Wij geloven in duurzaam en bewust vakmanschap. Daarom werken we met lokale mater
       "pottenbakkerij",
       "keramiek",
       "handgemaakt",
-      "amsterdam",
+      "Nijmegen",
       "lokaal",
       "ambacht",
       "handgedraaid",
