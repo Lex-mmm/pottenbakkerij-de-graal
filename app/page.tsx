@@ -60,7 +60,7 @@ export default async function Home() {
                 Handgemaakt met liefde
               </Badge>
               <h1 className="font-serif text-4xl font-bold tracking-tight text-charcoal sm:text-5xl md:text-6xl mb-6">
-                Uniek keramiek uit lokale klei
+                Uniek handgemaakt keramiek door Max
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 Bij Pottenbakkerij de Graal draait alles om ambacht en
