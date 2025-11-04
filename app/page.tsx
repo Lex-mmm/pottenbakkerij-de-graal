@@ -73,7 +73,7 @@ export default async function Home() {
                   <Link href="/shop">Ontdek de Collectie</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="/about">Over Ons</Link>
+                  <Link href="/about">Over Max</Link>
                 </Button>
               </div>
 

@@ -68,11 +68,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="nl">
-      <body className={`${inter.variable} ${playfair.variable} antialiased min-h-screen flex flex-col`}>
+      <body className={`${inter.variable} ${playfair.variable} antialiased min-h-screen flex flex-col relative`}>
+        {/* Watermark Background */}
+        <div 
+          className="fixed inset-0 pointer-events-none z-0 opacity-[0.03]"
+          style={{
+            backgroundImage: 'url(/images/Logo/logoheaddeGRaal.png)',
+            backgroundSize: '900px',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+        
         <CartProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <div className="relative z-10 flex flex-col min-h-screen">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </CartProvider>
       </body>
     </html>
