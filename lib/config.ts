@@ -8,7 +8,7 @@ export const siteConfig = {
   // Bedrijfsinformatie
   name: "Pottenbakkerij de Graal",
   tagline: "Handgemaakt Keramiek",
-  description: "Unieke, handgedraaide keramiek uit lokale klei. Mokken, schalen, vazen en borden met ambachtelijke uitstraling. Gemaakt met liefde in kleine oplages.",
+  description: "Unieke, handgedraaide keramiek. Mokken, schalen, vazen en borden met ambachtelijke uitstraling. Gemaakt met liefde in kleine oplages.",
   
   // Contact informatie
   contact: {
@@ -92,12 +92,12 @@ export const siteConfig = {
   
   // Over ons tekst (kort, voor footer e.d.)
   about: {
-    short: "Handgemaakt keramiek met hart en ziel. Elke stuk is uniek en gemaakt van lokale klei in kleine oplages.",
+    short: "Handgemaakt keramiek met hart en ziel. Elke stuk is uniek en gemaakt van klei in kleine oplages.",
     
     // Lange beschrijving voor de About pagina
     long: `Welkom bij Pottenbakkerij de Graal! In ons atelier in Nijmegen maakt Max handgedraaid keramiek met liefde en aandacht voor detail.
     
-Elk stuk begint als een klomp lokale klei en wordt door onze handen gevormd op de draaischijf. Na het draaien volgt een proces van drogen, bijwerken, bakken en glazuren. Dit hele proces duurt gemiddeld 2-3 weken voordat een stuk klaar is.
+Elk stuk begint als een klomp klei en wordt door onze handen gevormd op de draaischijf. Na het draaien volgt een proces van drogen, bijwerken, bakken en glazuren. Dit hele proces duurt gemiddeld 2-3 weken voordat een stuk klaar is.
 
 Wij geloven in duurzaam en bewust vakmanschap. Daarom werken we met lokale materialen, kleine oplages en tijdloze ontwerpen die generaties lang meegaan.`,
   },
@@ -105,7 +105,7 @@ Wij geloven in duurzaam en bewust vakmanschap. Daarom werken we met lokale mater
   // USP's (gebruikt op homepage)
   usps: [
     "Handgedraaid",
-    "Lokale klei",
+    "Klei",
     "Kleine oplages",
     "Unieke stukken",
   ],
