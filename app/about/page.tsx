@@ -64,40 +64,23 @@ export default async function AboutPage() {
                 Max aan het werk
               </h2>
               
-              {/* Featured large image */}
-              <div className="max-w-4xl mx-auto mb-8">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-2xl bg-secondary transform hover:scale-[1.02] transition-transform duration-500">
-                  <Image
-                    src={maxImages[1]}
-                    alt="Max de pottenbakker"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 80vw"
-                  />
-                </div>
+              {/* Two column layout with equal sized images */}
+              <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+                {maxImages.slice(1).map((src, i) => (
+                  <div
+                    key={src}
+                    className="relative aspect-[4/5] overflow-hidden rounded-xl bg-secondary shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]"
+                  >
+                    <Image
+                      src={src}
+                      alt={`Max de pottenbakker ${i + 2}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                ))}
               </div>
-
-              {/* Smaller images in a more dynamic layout */}
-              {maxImages.length > 2 && (
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
-                  {maxImages.slice(2).map((src, i) => (
-                    <div
-                      key={src}
-                      className={`relative overflow-hidden rounded-xl bg-secondary shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 ${
-                        i === 0 ? 'md:col-span-2 aspect-[16/9]' : 'aspect-[3/4]'
-                      }`}
-                    >
-                      <Image
-                        src={src}
-                        alt={`Max de pottenbakker ${i + 3}`}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 50vw, 33vw"
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
           </section>
         )}

@@ -85,15 +85,15 @@ export default async function Home() {
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-primary" />
-                  <span className="text-sm font-medium">Lokale klei</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-primary" />
                   <span className="text-sm font-medium">Kleine oplages</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-primary" />
                   <span className="text-sm font-medium">Unieke stukken</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-primary" />
+                  <span className="text-sm font-medium">Traditioneel ambacht</span>
                 </div>
               </div>
             </div>

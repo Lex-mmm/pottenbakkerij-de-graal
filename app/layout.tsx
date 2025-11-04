@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | Pottenbakkerij de Graal",
   },
   description:
-    "Unieke, handgedraaide keramiek uit lokale klei. Mokken, schalen, vazen en borden met ambachtelijke uitstraling. Gemaakt met liefde in kleine oplages.",
+    "Unieke, handgedraaide keramiek. Mokken, schalen, vazen en borden met ambachtelijke uitstraling. Gemaakt met liefde in kleine oplages.",
   keywords: [
     "pottenbakkerij",
     "keramiek",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pottenbakkerij de Graal | Handgemaakt Keramiek",
     description:
-      "Unieke, handgedraaide keramiek uit lokale klei. Gemaakt met liefde in kleine oplages.",
+      "Unieke, handgedraaide keramiek. Gemaakt met liefde in kleine oplages.",
     type: "website",
     locale: "nl_NL",
     siteName: "Pottenbakkerij de Graal",
