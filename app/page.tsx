@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { ProductShowcase } from "@/components/product-showcase";
 import { StaticProductGallery } from "@/components/static-product-gallery";
 import { AtelierCarousel } from "@/components/atelier-carousel";
+import { GoogleReviews } from "@/components/google-reviews";
 import { listProductImages } from "@/lib/product-images";
 import { ImageStrip } from "@/components/image-strip";
 import { prisma } from "@/lib/prisma";
@@ -77,8 +78,13 @@ export default async function Home() {
                 </Button>
               </div>
 
+              {/* Google Reviews */}
+              <div className="mt-8">
+                <GoogleReviews />
+              </div>
+
               {/* USPs */}
-              <div className="mt-12 grid grid-cols-2 gap-4">
+              <div className="mt-8 grid grid-cols-2 gap-4">
                 <div className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-primary" />
                   <span className="text-sm font-medium">Handgedraaid</span>

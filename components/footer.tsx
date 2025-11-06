@@ -46,10 +46,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/bestellen"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Contact
+                  Bestellen
                 </Link>
               </li>
             </ul>

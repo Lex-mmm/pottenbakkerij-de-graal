@@ -11,7 +11,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Atelier", href: "/atelier" },
   { name: "Over Max", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: "Bestellen", href: "/bestellen" },
 ];
 
 export function Header() {
