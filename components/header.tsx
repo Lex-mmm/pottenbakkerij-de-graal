@@ -26,7 +26,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity cursor-pointer">
               <Image
                 src="/images/Logo/LogoDeGraal_v2.png"
                 alt="Pottenbakkerij de Graal"
